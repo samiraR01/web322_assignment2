@@ -1,10 +1,12 @@
 const path = require("path");
 const express = require("express");
+const db = require("./config/db");
 const {
   userLogin,
   registerUser,
   getUserDashboard,
 } = require("./controllers/userController");
+const getPlans = require("./controllers/plansController");
 
 const app = express();
 
@@ -13,15 +15,21 @@ app.use(express.static(path.join(__dirname, "./web311_assignment2")));
 app.use(express.urlencoded({ extended: true }));
 /*app.use(express.static("views/images"));*/
 
+db.authenticate()
+  .then(function () {
+    console.log("Connection has been established successfully.");
+  })
+  .catch(function (err) {
+    console.log("Unable to connect to the database:", err);
+  });
+
 app.get("/", (req, res) => {
   res.render("home");
 });
 
 app.get("/dashboard", getUserDashboard);
 
-app.get("/cwh", (req, res) => {
-  res.render("cwh");
-});
+app.get("/cwh", getPlans);
 
 app.get("/login", (req, res) => {
   res.render("login");
