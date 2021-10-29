@@ -13,8 +13,14 @@
   <body>
     <!-- User -->
     <section class="dashboard">
-      <h2>Admin Dashboard</h2>
-      <p>Welcome Admin!!</p>
+      <div class="title">
+        <h2>Dashboard</h2>
+        <p>Welcome Admin!!</p>
+      </div>
+      <div class="user-info">
+        <p><span>Username: </span>{{user.firstName}} {{user.lastName}}</p>
+        <p><span>Email: </span>{{user.email}}</p>
+      </div>
     </section>
   </body>
 </html>

@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   direction: ltr;
+}
+html {
+  font-family: "Open Sans", sans-serif;
 }
 div#powerful-solutions.contain {
   margin: 0px 23px;
@@ -115,20 +119,42 @@ div#powerful-solutions.contain {
 /* Dashboard */
 .dashboard {
   font-family: inherit;
-  margin-top: 5rem;
+  width: 100%;
+  height: 100%;
+  background: #333;
 }
 
 .dashboard h2 {
+  color: #fafafa;
   font-size: 3.5rem;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
-  margin: 2.5rem 0rem;
 }
 
 .dashboard p {
+  color: #fafafa;
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
-  margin: 2.5rem 0rem;
+}
+
+.dashboard .user-info > p {
+  font-size: 1.6rem;
+  color: palevioletred;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.dashboard .title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.dashboard .user-info {
+  margin: 5rem 2rem;
+  padding: 2rem;
+  border: 1.5px solid #eee;
 }

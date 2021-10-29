@@ -5,9 +5,9 @@ const authUser = async (req, res) => {
   const user = await User.findOne({ where: { email: userName } });
   if (user && (await user.password) === password) {
     if (user.isAdmin) {
-      res.render("adminDashboard");
+      res.render("adminDashboard", { user });
     } else {
-      res.render("dashboard");
+      res.render("dashboard", { user });
     }
   } else {
     const error = "Username or Password is incorrect";
